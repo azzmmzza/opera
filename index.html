@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>つくばオペラ愛好会 | Tsukuba Opera Club & Tango Salon</title>
+  <meta name="description" content="科学都市・つくばの知性豊かな大人の女性たちが集う、声楽・オペラ・アルゼンチンタンゴの社交サロン。毎月第2・第4水曜午後の定期サロン、ノバホール公演など、永遠の芸術魂を響かせる活動を展開中。">
+  <meta name="keywords" content="つくばオペラ愛好会, つくばタンゴクラブ, Mari, Luna, つくばノバホール, 歌うアルゼンチンタンゴ, 淡路七穂子, 声楽サロン, ベルカント, シニア声楽">
+
+  <!-- OpenGraph & Social -->
+  <meta property="og:title" content="つくばオペラ愛好会 | Tsukuba Opera Club & Tango Salon">
+  <meta property="og:description" content="「年輪を重ねるほど、歌声は深く、魂は自由に。」毎月第2・第4水曜午後の定期サロンと、ノバホール大公演の華麗なる記録。">
+  <meta property="og:image" content="assets/images/poster.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts: Google Fonts (Cinzel Decorative, Playfair Display, Cormorant Garamond, Noto Serif JP, Montserrat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Floating Falling Rose Petal Canvas -->
+  <canvas id="petals-canvas" aria-hidden="true"></canvas>
+
+  <!-- ==========================================================================
+       Header / Navigation
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#hero" class="brand-link" aria-label="つくばオペラ愛好会 トップへ">
+        <svg class="brand-crest" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="46" stroke="url(#goldGrad)" stroke-width="2" />
+          <circle cx="50" cy="50" r="41" stroke="rgba(212, 175, 55, 0.4)" stroke-width="1" stroke-dasharray="3 3" />
+          <!-- Lyre & Rose motif -->
+          <path d="M35 34 C35 60 42 70 50 74 C58 70 65 60 65 34" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M43 38 V66 M50 35 V68 M57 38 V66" stroke="url(#goldGrad)" stroke-width="1.5" />
+          <path d="M31 32 C34 26 40 28 43 32" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" />
+          <path d="M69 32 C66 26 60 28 57 32" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" />
+          <circle cx="50" cy="28" r="4" fill="url(#goldGrad)" />
+          <defs>
+            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffd778" />
+              <stop offset="50%" stop-color="#d4af37" />
+              <stop offset="100%" stop-color="#aa8222" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title">TSUKUBA OPERA CLUB</span>
+          <span class="brand-sub">つくばオペラ愛好会 ＆ タンゴサロン</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li class="nav-item"><a href="#wednesday-salon">水曜サロン</a></li>
+          <li class="nav-item"><a href="#chronicle">公演アーカイブ</a></li>
+          <li class="nav-item"><a href="#divas">主宰・歌姫</a></li>
+          <li class="nav-item"><a href="#jukebox">演目・試聴</a></li>
+          <li class="nav-item"><a href="#gallery">舞台写真</a></li>
+          <li class="nav-item"><a href="#contact">見学・入会</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#wednesday-salon" class="btn-salon-quick">
+          <span>✨ 第2・第4水曜サロン</span>
+        </a>
+        <button class="mobile-toggle" aria-label="メニュー開閉">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Hero Section: The Grand Operatic Landing
+       ========================================================================== -->
+  <main>
+    <section class="hero-section" id="hero">
+      <div class="hero-backdrop-glow"></div>
+      
+      <div class="container hero-grid">
+        <div class="hero-text-col">
+          <div class="hero-badge-wrap">
+            <div class="hero-schedule-badge">
+              <span class="pulse-dot"></span>
+              <span>毎月 第2・第4 水曜日 午後 定例開催</span>
+            </div>
+          </div>
+
+          <h1 class="hero-title">
+            歌声は永遠に、<br>
+            <span class="title-accent">魂は熱狂の舞台へ。</span>
+          </h1>
+
+          <p class="hero-lead-quote">
+            “Everlasting Artistic Soul — 年齢を重ねるほど、歌声は深みを増し、心はどこまでも華やかに咲き誇る。”
+          </p>
+
+          <p class="hero-desc">
+            科学都市・つくばの知性豊かな大人の女性たちが集う声楽・オペラサロン。
+            ベルカントの清らかな響きから、情熱のアルゼンチン・タンゴまで。
+            気品とユーモア、そして舞台への尽きせぬ情熱を分かち合う、上質な社交サークルです。
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#chronicle" class="btn-primary">
+              <span>▶ 記念公演アーカイブを見る</span>
+            </a>
+            <a href="#jukebox" class="btn-secondary">
+              <span>♫ 生演奏クリップを聴く</span>
+            </a>
+            <a href="#wednesday-salon" class="btn-secondary">
+              <span>✉ 水曜サロン見学のご案内</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num">第2・第4</span>
+              <span class="stat-label">水曜午後の定期サロン</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">Mari & Luna</span>
+              <span class="stat-label">主宰ヴォーカルデュオ</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">Nova Hall</span>
+              <span class="stat-label">つくばノバホール記念公演</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual: The Poster & Mari/Luna Spotlight -->
+        <div class="hero-visual-card">
+          <div class="poster-frame">
+            <div class="poster-inner">
+              <img src="assets/images/poster.jpg" alt="歌うアルゼンチンタンゴ つくばノバホール公演ポスター" loading="eager" width="1076" height="1522">
+              <span class="poster-overlay-tag">2025.3.22 NOVA HALL</span>
+            </div>
+
+            <!-- Floating Audio Player Chip -->
+            <div class="floating-audio-chip paused" id="hero-audio-chip">
+              <div class="chip-track-info">
+                <button class="chip-play-btn" id="hero-play-btn" aria-label="音楽再生・一時停止">
+                  ▶
+                </button>
+                <div class="chip-text">
+                  <span class="chip-title">想いの届く日 (El día que me quieras)</span>
+                  <span class="chip-artist">Mari & Luna (Live Clip)</span>
+                </div>
+              </div>
+              <div class="chip-equalizer">
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Highlight Feature: The 2nd & 4th Wednesday Afternoon Opera Salon
+         ========================================================================== -->
+    <section class="section wednesday-salon-section" id="wednesday-salon">
+      <div class="container">
+        <div class="salon-invitation-card">
+          <div class="salon-grid">
+            <div class="salon-info-col">
+              <span class="salon-header-badge">BI-WEEKLY SALON GATHERING</span>
+              <h2 class="salon-main-title">
+                水曜午後のオペラサロン<br>
+                <span class="gold">第2・第4 水曜日 13:30〜</span>
+              </h2>
+              <div class="ornament-divider" style="margin-left:0; margin-right:auto;">✦</div>
+              <p class="salon-desc-text">
+                穏やかな光が差し込む水曜日の午後、つくばの街に響くのは、優雅なベルカントの歌声と弾むような笑い声。
+                つくばオペラ愛好会の定期サロンは、音楽と知的好奇心を愛する淑女たちが集い、
+                声と心を解き放つ贅沢な時間です。初心者からベテランまで、温かく迎え入れます。
+              </p>
+
+              <div class="salon-pillars">
+                <div class="pillar-item">
+                  <div class="pillar-icon">⚜</div>
+                  <div class="pillar-content">
+                    <h4>ベルカント発声＆呼吸法</h4>
+                    <p>深い腹式呼吸で身体を整え、艶やかで若々しい響きを蘇らせます。</p>
+                  </div>
+                </div>
+
+                <div class="pillar-item">
+                  <div class="pillar-icon">🎭</div>
+                  <div class="pillar-content">
+                    <h4>憧れのオペラ・アリア</h4>
+                    <p>ヴェルディ、プッチーニ、モーツァルトの名曲をソロや重唱で楽しむ。</p>
+                  </div>
+                </div>
+
+                <div class="pillar-item">
+                  <div class="pillar-icon">🌹</div>
+                  <div class="pillar-content">
+                    <h4>越境のタンゴ＆名曲</h4>
+                    <p>ピアソラやカルロス・ガルデルなど、情熱的なタンゴ歌唱にも挑戦。</p>
+                  </div>
+                </div>
+
+                <div class="pillar-item">
+                  <div class="pillar-icon">☕</div>
+                  <div class="pillar-content">
+                    <h4>ハイティー＆サロン歓談</h4>
+                    <p>練習後は香り高いお茶とともに、芸術や文化を語り合う楽しいひととき。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Salon Schedule & Dynamic Date Card -->
+            <div class="salon-schedule-box">
+              <span class="box-corner-ornament top-left"></span>
+              <span class="box-corner-ornament top-right"></span>
+              <span class="box-corner-ornament bottom-left"></span>
+              <span class="box-corner-ornament bottom-right"></span>
+
+              <div class="schedule-header">
+                <span class="schedule-label">REGULAR ACTIVITIES SCHEDULE</span>
+                <h3 class="schedule-title">定期サロン開催概要</h3>
+              </div>
+
+              <div class="schedule-row">
+                <span class="schedule-key"><span>📅</span> 開催周期</span>
+                <span class="schedule-val highlight">毎月 第2・第4 水曜日</span>
+              </div>
+
+              <div class="schedule-row">
+                <span class="schedule-key"><span>⏰</span> 時間帯</span>
+                <span class="schedule-val">13:30 〜 16:30 (午後)</span>
+              </div>
+
+              <div class="schedule-row">
+                <span class="schedule-key"><span>🏛</span> 主な会場</span>
+                <span class="schedule-val">つくばノバホール練習室 / 市内音楽サロン</span>
+              </div>
+
+              <div class="schedule-row">
+                <span class="schedule-key"><span>👥</span> 対象</span>
+                <span class="schedule-val">音楽と歌を愛する皆様（見学歓迎）</span>
+              </div>
+
+              <!-- Next Date Dynamic Calculation -->
+              <div class="next-date-card" id="salon-dates-card">
+                <div class="next-date-title">NEXT UPCOMING SALON / 次回サロン予定日</div>
+                <div class="next-date-display" id="next-salon-date">計算中...</div>
+                <span class="next-countdown-badge" id="salon-countdown">開催予定</span>
+              </div>
+
+              <div class="schedule-actions">
+                <button class="btn-calendar-download" id="btn-download-ics">
+                  <span>📅 カレンダーに追加 (.ics)</span>
+                </button>
+                <a href="#contact" class="btn-inquire-salon">
+                  <span>✉ サロンを見学する</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Scroll-Driven Event Chronicle (活動年表・公演の歩み)
+         ========================================================================== -->
+    <section class="section timeline-section" id="chronicle">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">EVENT CHRONICLE & ARCHIVE</span>
+          <h2 class="section-title">華麗なる舞台と<span class="gold">情熱の軌跡</span></h2>
+          <div class="ornament-divider">❖</div>
+          <p class="section-lead">
+            水曜午後のサロンでの研鑽が、まばゆいスポットライトの舞台へと昇華する。
+            つくばオペラ愛好会が紡いできた、心揺さぶるコンサートとイベントの歩み。
+          </p>
+        </div>
+
+        <div class="timeline-spine">
+          <!-- Milestone 1: The Landmark Nova Hall Tango Concert -->
+          <article class="timeline-event-card">
+            <span class="timeline-node"></span>
+            <div class="event-box">
+              <span class="event-date-stamp">2025年3月22日 (土) 14:00 開演</span>
+              <h3 class="event-title">歌うアルゼンチンタンゴ — Tango Argentina en Tsukuba</h3>
+              <div class="event-venue">
+                <span>📍 つくばノバホール 〈小ホール〉 (つくば市吾妻 1-10-1)</span>
+              </div>
+
+              <div class="event-media-preview">
+                <img src="assets/images/stage_02.jpg" alt="歌うアルゼンチンタンゴ ノバホール公演の様子" loading="lazy">
+                <a href="#jukebox" class="play-badge-overlay trigger-audio" data-track-index="0" aria-label="公演音源を聴く">
+                  <span class="play-circle">▶</span>
+                </a>
+              </div>
+
+              <p class="event-summary">
+                満席のつくばノバホール小ホールにて開催された金字塔公演。
+                Mari & Lunaの艶やかなヴォーカルと、淡路七穂子タンゴトリオ（ピアノ、バンドネオン、バイオリン）が織りなす情熱の夕べ。
+                「想いの届く日」「リベルタンゴ」「ラ・クンパルシータ」など不朽の名曲が響き渡り、鳴り止まぬスタンディングオベーションを受けました。
+              </p>
+
+              <div class="event-tags">
+                <span class="event-tag">ボーカル: Mari & Luna</span>
+                <span class="event-tag">演奏: 淡路七穂子タンゴトリオ</span>
+                <span class="event-tag">全席完売</span>
+                <span class="event-tag">記念DVD収録公演</span>
+              </div>
+
+              <div class="event-action-bar">
+                <a href="#jukebox" class="btn-event-play trigger-audio" data-track-index="0">
+                  <span>♫ ライブ録音クリップを試聴</span>
+                </a>
+                <a href="#gallery" class="btn-event-play">
+                  <span>📷 舞台写真を見る ➔</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Milestone 2: Regular Wednesday Salons -->
+          <article class="timeline-event-card">
+            <span class="timeline-node"></span>
+            <div class="event-box">
+              <span class="event-date-stamp">毎月 第2・第4 水曜日 定例</span>
+              <h3 class="event-title">水曜午後のベルカント＆オペラ愛唱サロン</h3>
+              <div class="event-venue">
+                <span>📍 つくば市中心部サロン・音楽スタジオ</span>
+              </div>
+
+              <div class="event-media-preview">
+                <img src="assets/images/mari_luna_duo.jpg" alt="Mari & Luna サロン練習風景" loading="lazy">
+              </div>
+
+              <p class="event-summary">
+                公演の原点となる、隔週水曜日のサロンセッション。
+                イタリア古典歌曲、オペラアリアの重唱アンサンブル、発声練習を重ねながら、
+                それぞれの人生経験を乗せた「歌のドラマ」を探求しています。
+              </p>
+
+              <div class="event-tags">
+                <span class="event-tag">定期活動</span>
+                <span class="event-tag">ベルカント発声</span>
+                <span class="event-tag">オペラ重唱</span>
+                <span class="event-tag">サロン歓談</span>
+              </div>
+
+              <div class="event-action-bar">
+                <a href="#wednesday-salon" class="btn-event-play">
+                  <span>ℹ サロン詳細を見る</span>
+                </a>
+                <a href="#contact" class="btn-event-play">
+                  <span>✉ 見学を申し込む ➔</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Milestone 3: Autumn Salon Soirée -->
+          <article class="timeline-event-card">
+            <span class="timeline-node"></span>
+            <div class="event-box">
+              <span class="event-date-stamp">2024年 秋季 開催</span>
+              <h3 class="event-title">秋のサロン・ソワレ ＆ 華麗なるアリアの午後</h3>
+              <div class="event-venue">
+                <span>📍 つくばカピオ・リハーサルサロン</span>
+              </div>
+
+              <div class="event-media-preview">
+                <img src="assets/images/stage_04.jpg" alt="秋のサロン公演" loading="lazy">
+              </div>
+
+              <p class="event-summary">
+                モーツァルト『フィガロの結婚』、ビゼー『カルメン』より「ハバネラ」、プッチーニ『トスカ』の珠玉のアリアを披露。
+                知性豊かなメンバーによる音楽史の解説と、心温まるティータイムが融合した上質なソワレ。
+              </p>
+
+              <div class="event-tags">
+                <span class="event-tag">オペラアリア</span>
+                <span class="event-tag">会員ソロ発表</span>
+                <span class="event-tag">ティーサロン</span>
+              </div>
+
+              <div class="event-action-bar">
+                <a href="#gallery" class="btn-event-play">
+                  <span>📷 写真ギャラリーを見る ➔</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Milestone 4: Next Concert Preview -->
+          <article class="timeline-event-card">
+            <span class="timeline-node"></span>
+            <div class="event-box">
+              <span class="event-date-stamp">FORTHCOMING / 次期企画中</span>
+              <h3 class="event-title">次回記念大公演：オペラ・アリアと情熱の歌姫たち</h3>
+              <div class="event-venue">
+                <span>📍 つくばノバホール（予定）</span>
+              </div>
+
+              <div class="event-media-preview">
+                <img src="assets/images/stage_bow.jpg" alt="次回公演の構想" loading="lazy">
+              </div>
+
+              <p class="event-summary">
+                前回のタンゴ大公演の大盛況を受け、次回は本格的なオペラ名場面とタンゴのクロスオーバーを企画中！
+                水曜午後の定例サロンにて、新曲のレパートリー練習が熱心に進められています。
+              </p>
+
+              <div class="event-tags">
+                <span class="event-tag">新企画進行中</span>
+                <span class="event-tag">オペラ＆タンゴ</span>
+                <span class="event-tag">新メンバー参加可能</span>
+              </div>
+
+              <div class="event-action-bar">
+                <a href="#contact" class="btn-event-play">
+                  <span>✉ 次回公演の優先案内を希望する ➔</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         The Divas & Performers Section (Mari & Luna)
+         ========================================================================== -->
+    <section class="section divas-section" id="divas">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">THE DIVAS & COLLABORATING ARTISTS</span>
+          <h2 class="section-title">舞台に咲く、<span class="gold">永遠のディーヴァたち</span></h2>
+          <div class="ornament-divider">✦</div>
+          <p class="section-lead">
+            人生の深みと経験が、円熟の音色を紡ぎ出す。
+            少女のような純粋なパッションと、洗練された大人のエレガンスを兼ね備えた主宰歌手たち。
+          </p>
+        </div>
+
+        <div class="divas-grid">
+          <!-- Mari -->
+          <article class="diva-card">
+            <div class="diva-image-wrap">
+              <img src="assets/images/mari_portrait.jpg" alt="Mari (石井) - 主宰ヴォーカル" loading="lazy">
+              <div class="diva-image-gradient"></div>
+              <span class="diva-role-badge">VOCAL / ORGANIZER</span>
+            </div>
+            <div class="diva-content">
+              <div class="diva-name-group">
+                <h3 class="diva-stage-name">Mari</h3>
+                <span class="diva-sub-info">石井 (Ishii) — Dramatic & Soulful Vocal</span>
+              </div>
+              <p class="diva-quote">
+                “歌うことは、魂の命の鼓動。客席と呼吸がひとつになる瞬間、何よりも自由になれるのです。”
+              </p>
+              <p class="diva-bio">
+                深みのある温かい声躯と、ドラマティックな表現力で聴き手を惹きつける実力派。
+                ベルカントの古典からアルゼンチン・タンゴの切ない哀愁まで、劇的な物語を歌い上げる。
+                つくばタンゴクラブ・オペラ愛好会の主宰として、洗練されたサロン活動を力強く牽引。
+              </p>
+            </div>
+          </article>
+
+          <!-- Luna -->
+          <article class="diva-card">
+            <div class="diva-image-wrap">
+              <img src="assets/images/luna_portrait.jpg" alt="Luna (箕輪) - 主宰ヴォーカル" loading="lazy">
+              <div class="diva-image-gradient"></div>
+              <span class="diva-role-badge">VOCAL / ORGANIZER</span>
+            </div>
+            <div class="diva-content">
+              <div class="diva-name-group">
+                <h3 class="diva-stage-name">Luna</h3>
+                <span class="diva-sub-info">箕輪 (Minowa) — Luminous Lyric Soprano</span>
+              </div>
+              <p class="diva-quote">
+                “何歳になっても、舞台はきらめく魔法の場所。笑顔と美しい旋律で心をつなぎたい。”
+              </p>
+              <p class="diva-bio">
+                透明感あふれる伸びやかなハイトーンと、優美で軽やかなフレージングが魅力。
+                モーツァルトやプッチーニのリリックなアリアを得意とし、舞台上では華やかな笑顔と気品あるトークで客席を包み込む。
+                サロンでは温かい人柄で仲間たちを励まし、笑いの絶えない練習空間を創り出す。
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Collaborating Tango Trio -->
+        <div class="trio-showcase-box">
+          <div class="trio-title-bar">
+            <h3>客演：淡路七穂子タンゴトリオ</h3>
+            <p>日本屈指のタンゴ・アンサンブルが、熱きグルーヴと卓越した技巧でヴォーカルを支える</p>
+          </div>
+
+          <div class="trio-members-grid">
+            <div class="trio-member-item">
+              <span class="trio-instrument-badge">PIANO</span>
+              <h4 class="trio-member-name">淡路 七穂子</h4>
+              <p class="trio-member-desc">
+                タンゴ・ピアニスト。繊細なタッチと力強いリズムセクションを兼ね備え、ヴォーカルに寄り添う変幻自在のアンサンブルをリード。
+              </p>
+            </div>
+
+            <div class="trio-member-item">
+              <span class="trio-instrument-badge">BANDONEON</span>
+              <h4 class="trio-member-name">池田 達則</h4>
+              <p class="trio-member-desc">
+                バンドネオン奏者。蛇腹が吐息のように語りかける情感豊かな音色で、アルゼンチン・タンゴの真髄をノバホールに響かせる。
+              </p>
+            </div>
+
+            <div class="trio-member-item">
+              <span class="trio-instrument-badge">VIOLIN</span>
+              <h4 class="trio-member-name">専光 秀紀</h4>
+              <p class="trio-member-desc">
+                バイオリニスト。哀愁と情熱が疾走する切れ味鋭いボウイングで、艶やかなオブリガートと劇的なソロを紡ぎ出す。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Repertoire & Live Jukebox Player
+         ========================================================================== -->
+    <section class="section jukebox-section" id="jukebox">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">STAGE REPERTOIRE & LIVE AUDIO</span>
+          <h2 class="section-title">珠玉の演目と<span class="gold">生演奏試聴</span></h2>
+          <div class="ornament-divider">♫</div>
+          <p class="section-lead">
+            ノバホール公演のライヴ音源より、情熱の息づく名演クリップをお届けします。
+            レコード盤のスピナーを回し、ノバホールの贅沢な残響をご堪能ください。
+          </p>
+        </div>
+
+        <div class="jukebox-player-wrap">
+          <!-- Left: Turntable / Current Playing Card -->
+          <div class="current-track-card">
+            <div class="turntable-visual paused" id="turntable">
+              <div class="vinyl-center-art">TOC</div>
+            </div>
+
+            <h3 class="playing-title" id="playing-title">想いの届く日 (El día que me quieras)</h3>
+            <p class="playing-artist" id="playing-artist">Mari & Luna with 淡路七穂子タンゴトリオ</p>
+
+            <div class="audio-progress-wrap">
+              <div class="time-row">
+                <span id="current-time">0:00</span>
+                <span id="total-time">0:35</span>
+              </div>
+              <div class="progress-bar-container" id="progress-bar-container">
+                <div class="progress-bar-fill" id="progress-bar-fill"></div>
+              </div>
+            </div>
+
+            <div class="audio-controls-row">
+              <button class="btn-ctrl" id="btn-prev" aria-label="前の曲">⏮</button>
+              <button class="btn-main-play" id="main-play-btn" aria-label="再生・一時停止">▶</button>
+              <button class="btn-ctrl" id="btn-next" aria-label="次の曲">⏭</button>
+            </div>
+          </div>
+
+          <!-- Right: Track List -->
+          <div class="tracklist-wrap">
+            <div class="track-item active" data-track-index="0">
+              <div class="track-meta">
+                <span class="track-number">01</span>
+                <div>
+                  <div class="track-item-title">想いの届く日 (El día que me quieras)</div>
+                  <div class="track-item-genre">Carlos Gardel / Live at Tsukuba Nova Hall</div>
+                </div>
+              </div>
+              <span class="track-length">0:35 (Live)</span>
+            </div>
+
+            <div class="track-item" data-track-index="1">
+              <div class="track-meta">
+                <span class="track-number">02</span>
+                <div>
+                  <div class="track-item-title">リベルタンゴ ＆ 歌うタンゴ (Libertango & Passions)</div>
+                  <div class="track-item-genre">Astor Piazzolla / Live at Tsukuba Nova Hall</div>
+                </div>
+              </div>
+              <span class="track-length">0:35 (Live)</span>
+            </div>
+
+            <div class="track-item" style="cursor:default; opacity:0.85;">
+              <div class="track-meta">
+                <span class="track-number">03</span>
+                <div>
+                  <div class="track-item-title">ラ・クンパルシータ (La cumparsita)</div>
+                  <div class="track-item-genre">G. M. Rodríguez / フル公演レパートリー</div>
+                </div>
+              </div>
+              <span class="track-length">全編収録</span>
+            </div>
+
+            <div class="track-item" style="cursor:default; opacity:0.85;">
+              <div class="track-meta">
+                <span class="track-number">04</span>
+                <div>
+                  <div class="track-item-title">アルフォンシーナと海 (Alfonsina y el mar)</div>
+                  <div class="track-item-genre">Ariel Ramírez / フル公演レパートリー</div>
+                </div>
+              </div>
+              <span class="track-length">全編収録</span>
+            </div>
+
+            <div class="track-item" style="cursor:default; opacity:0.85;">
+              <div class="track-meta">
+                <span class="track-number">05</span>
+                <div>
+                  <div class="track-item-title">バチン食堂の少年 (Chiquilín de Bachín)</div>
+                  <div class="track-item-genre">Astor Piazzolla / フル公演レパートリー</div>
+                </div>
+              </div>
+              <span class="track-length">全編収録</span>
+            </div>
+
+            <div class="track-item" style="cursor:default; opacity:0.85;">
+              <div class="track-meta">
+                <span class="track-number">06</span>
+                <div>
+                  <div class="track-item-title">ジェラシー (Jalousie) ＆ オペラ名曲集</div>
+                  <div class="track-item-genre">Jacob Gade & Opera Arias / 定例サロン愛唱曲</div>
+                </div>
+              </div>
+              <span class="track-length">サロン演目</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Nova Hall Stage Gallery & Video Highlight
+         ========================================================================== -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">STAGE MOMENTS AT NOVA HALL</span>
+          <h2 class="section-title">感動の光景・<span class="gold">舞台写真館</span></h2>
+          <div class="ornament-divider">❖</div>
+          <p class="section-lead">
+            スポットライトに照らされたノバホールのステージ。
+            ドレスの煌めき、渾身の熱唱、そして鳴り止まぬ拍手と花束の贈り物。
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-grid-item featured-wide">
+            <img src="assets/images/stage_02.jpg" alt="ノバホール全景 Lunaの独唱とトリオ演奏" loading="lazy">
+            <div class="gallery-item-caption">
+              <h4 class="gallery-caption-title">ノバホール全景・華麗なる独唱</h4>
+              <p class="gallery-caption-sub">Luna ＆ 淡路七穂子タンゴトリオ</p>
+            </div>
+          </div>
+
+          <div class="gallery-grid-item">
+            <img src="assets/images/live_mari_gown.jpg" alt="Mariの情感豊かなソロ歌唱" loading="lazy">
+            <div class="gallery-item-caption">
+              <h4 class="gallery-caption-title">ドラマティックな熱唱</h4>
+              <p class="gallery-caption-sub">Mari (ピーコック＆ゴールドドレス)</p>
+            </div>
+          </div>
+
+          <div class="gallery-grid-item">
+            <img src="assets/images/live_luna_pink.jpg" alt="Lunaの歌唱シーン" loading="lazy">
+            <div class="gallery-item-caption">
+              <h4 class="gallery-caption-title">光のヴェールを纏って</h4>
+              <p class="gallery-caption-sub">Luna (スパンコールドレス)</p>
+            </div>
+          </div>
+
+          <div class="gallery-grid-item">
+            <img src="assets/images/stage_instrumental.jpg" alt="トリオのインストゥルメンタル演奏" loading="lazy">
+            <div class="gallery-item-caption">
+              <h4 class="gallery-caption-title">情熱のアンサンブル</h4>
+              <p class="gallery-caption-sub">ピアノ・バンドネオン・バイオリン</p>
+            </div>
+          </div>
+
+          <div class="gallery-grid-item featured-wide">
+            <img src="assets/images/stage_bow.jpg" alt="カーテンコールと花束贈呈" loading="lazy">
+            <div class="gallery-item-caption">
+              <h4 class="gallery-caption-title">鳴り止まぬ喝采と花束</h4>
+              <p class="gallery-caption-sub">Mari & Luna カーテンコール</p>
+            </div>
+          </div>
+
+          <div class="gallery-grid-item">
+            <img src="assets/images/stage_duet_02.jpg" alt="シックなイブニングドレスでの熱演" loading="lazy">
+            <div class="gallery-item-caption">
+              <h4 class="gallery-caption-title">大人の気品と深み</h4>
+              <p class="gallery-caption-sub">漆黒のビーズドレスでの歌唱</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Highlight Action Banner -->
+        <div class="video-highlight-banner">
+          <div class="video-banner-info">
+            <h3>ノバホール公演 ハイライト映像（15秒特別クリップ）</h3>
+            <p>熱気あふれるクライマックスの歌声と演奏を、動画でお楽しみいただけます。</p>
+          </div>
+          <button class="btn-watch-clip" id="btn-watch-clip">
+            <span>▶ 映像を再生する</span>
+          </button>
+        </div>
+
+        <!-- DVD Authoring Progress Notice -->
+        <div class="dvd-progress-banner">
+          <div class="dvd-icon">📀</div>
+          <div class="dvd-text">
+            <h4>【お知らせ】つくばノバホール記念公演「歌うアルゼンチンタンゴ」DVD 鋭意編集中！</h4>
+            <p>
+              当日ご来場いただいた皆様、そして愛好会の皆様に向けて、当日の全編をマルチアングル・高音質で収録した記念DVDの制作が進行しています。
+              完成次第、水曜サロンおよび当サイトにてご案内いたします。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Join Us & Salon Inquiry Section
+         ========================================================================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card-wrap">
+          <!-- Left: Information -->
+          <div class="contact-info-col">
+            <span class="section-subtitle">JOIN OUR SALON & INQUIRIES</span>
+            <h3 class="section-title">あなたも、<span class="gold">水曜日の歌姫に。</span></h3>
+            <div class="ornament-divider" style="margin-left:0; margin-right:auto;">✦</div>
+            <p>
+              「昔からオペラが好きだった」「若い頃に歌っていた声楽をもう一度楽しみたい」「タンゴのリズムに心を躍らせたい」……。
+              つくばオペラ愛好会は、知的好奇心と芸術を愛する大人の女性の皆様をいつでも心から歓迎いたします。
+              見学や体験参加も随時受け付けておりますので、どうぞお気軽にお声がけください。
+            </p>
+
+            <div class="contact-details-list">
+              <div class="detail-item">
+                <div class="detail-icon">📅</div>
+                <div class="detail-text">
+                  <h5>定例サロン日時</h5>
+                  <p>毎月 第2・第4 水曜日 13:30〜16:30</p>
+                </div>
+              </div>
+
+              <div class="detail-item">
+                <div class="detail-icon">🏛</div>
+                <div class="detail-text">
+                  <h5>活動場所</h5>
+                  <p>つくば市中心部（ノバホール練習室 / つくば市内文化施設）</p>
+                </div>
+              </div>
+
+              <div class="detail-item">
+                <div class="detail-icon">✉</div>
+                <div class="detail-text">
+                  <h5>主催・お問合せ窓口</h5>
+                  <p>つくばタンゴクラブ / つくばオペラ愛好会（石井・箕輪）<br>
+                  <a href="mailto:tsukubatango@gmail.com" style="color:var(--color-gold-light); text-decoration:underline;">tsukubatango@gmail.com</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Form -->
+          <div class="contact-form-col">
+            <form class="contact-form" id="salon-inquiry-form">
+              <div class="form-group">
+                <label for="user-name" class="form-label">お名前 (必須)</label>
+                <input type="text" id="user-name" class="form-input" placeholder="例：筑波 華子" required>
+              </div>
+
+              <div class="form-group">
+                <label for="user-email" class="form-label">メールアドレス または お電話番号 (必須)</label>
+                <input type="text" id="user-email" class="form-input" placeholder="例：hanako@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="preferred-date" class="form-label">見学・参加希望日</label>
+                <select id="preferred-date" class="form-select">
+                  <option value="直近の第2または第4水曜日">直近の第2または第4水曜日（日程はおまかせ）</option>
+                  <!-- Dynamically populated options from JS -->
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="user-message" class="form-label">メッセージ・歌のご経験など（自由記入）</label>
+                <textarea id="user-message" class="form-textarea" placeholder="例：合唱の経験があります。見学を希望します。"></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit-form">
+                <span>✉ 見学・お問合せメールを作成する</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       Site Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-brand-title">TSUKUBA OPERA CLUB</span>
+          <span class="footer-brand-sub">つくばオペラ愛好会 ＆ つくばタンゴクラブ</span>
+        </div>
+
+        <ul class="footer-nav">
+          <li><a href="#hero">トップ</a></li>
+          <li><a href="#wednesday-salon">水曜サロン</a></li>
+          <li><a href="#chronicle">公演記録</a></li>
+          <li><a href="#divas">主宰・歌姫</a></li>
+          <li><a href="#jukebox">演目・試聴</a></li>
+          <li><a href="#gallery">舞台写真</a></li>
+          <li><a href="#contact">お問合せ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025-2026 つくばタンゴクラブ / つくばオペラ愛好会 (石井・箕輪). All Rights Reserved.</p>
+        <p style="margin-top:0.4rem; color:var(--color-gold); font-size:0.75rem;">
+          Special Concert: 歌うアルゼンチンタンゴ en つくばノバホール (2025.3.22)
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Modal Dialog (Video & Photo Lightbox)
+       ========================================================================== -->
+  <div class="site-modal" id="site-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content-box">
+      <button class="modal-close-btn" id="modal-close" aria-label="閉じる">✕</button>
+      <div class="modal-body">
+        <div id="modal-media-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

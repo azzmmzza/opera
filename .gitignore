@@ -1,0 +1,18 @@
+# Large media master files & DVD authoring artifacts (>100MB)
+/*.mp4
+/*.iso
+/*.mpg
+/*.m4a
+/*.opus
+dvd/
+work/
+dvd.xml
+*.log
+dvd_pass*
+
+# Ensure web-optimized assets are tracked
+!assets/video/nova_hall_highlight.mp4
+
+# OS & Temp
+.DS_Store
+Thumbs.db
